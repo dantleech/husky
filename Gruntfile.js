@@ -173,7 +173,7 @@ module.exports = function(grunt) {
                     }
                 ]
             },
-            "requirejs_dist": {
+            requirejs_dist: {
                 files: [
                     {
                         expand: true,
@@ -292,16 +292,16 @@ module.exports = function(grunt) {
                         ],
                         dest: 'bower_components/massiveart-uritemplate/'
                     },
-					// typeahead.js
-					{
-						expand: true,
-						flatten: true,
-						src: [
-							'.bower_components/typeahead.js/dist/typeahead.js',
-							'.bower_components/typeahead.js/dist/typeahead.min.js',
-						],
-						dest: 'bower_components/typeahead.js'
-					},
+                    // typeahead.js
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: [
+                            '.bower_components/typeahead.js/dist/typeahead.js',
+                            '.bower_components/typeahead.js/dist/typeahead.min.js',
+                        ],
+                        dest: 'bower_components/typeahead.js'
+                    },
                     // tagmanager.js
                     {
                         expand: true,
@@ -323,9 +323,9 @@ module.exports = function(grunt) {
                     verbose: false,
                     cleanTargetDir: false,
                     cleanBowerDir: false,
-					bowerOptions: {
-						forceLatest: true
-					}
+                    bowerOptions: {
+                        forceLatest: true
+                    }
                 }
             }
         },

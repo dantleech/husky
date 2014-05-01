@@ -23,10 +23,9 @@ Install [bower](http://bower.io)
 And now install all dependencies:
 
     bower install
-	
+
 Install [Compass](http://compass-style.org/install/) with [animations](https://github.com/ericam/compass-animation):
 
-	
     gem update --system
     gem install compass
     gem install animation --pre

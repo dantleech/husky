@@ -5,7 +5,7 @@ require.config({
 require(['lib/husky'], function(Husky) {
     'use strict';
 
-    var fakeServer;
+    var fakeServer, app, _;
     fakeServer = sinon.fakeServer.create();
 
     fakeServer.respondWith('GET', '/navigation', [200, { 'Content-Type': 'application/json' },
@@ -45,15 +45,15 @@ require(['lib/husky'], function(Husky) {
         '{"sub":{"items":[{"title":"Produkt 2","id":"product_2","hasSub":false,"type":"content","action":"/portals/products/product_1/content"}]}}'
     ]);
 
-    var app = Husky({ debug: { enable: true }}),
-        _ = app.sandbox.util._;
+    app = Husky({ debug: { enable: true }});
+    _ = app.sandbox.util._;
 
     app.start().then(function() {
         app.logger.log('Aura started...');
+
         _.delay(function() {
             fakeServer.respond();
         }, 200);
-
 
         app.sandbox.on('navigation.item.selected', function(item) {
             app.logger.log(item);
@@ -68,7 +68,7 @@ require(['lib/husky'], function(Husky) {
 
         _.delay(function() {
             app.sandbox.emit('husky.header.button-type', 'saveDelete');
-       }, 500);
+        }, 500);
 
         app.sandbox.on('husky.button.save.click', function() {
             app.sandbox.emit('husky.header.button-type', 'add');

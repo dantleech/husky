@@ -24740,7 +24740,7 @@ define('husky',[
         app.use('./husky_extensions/globalize');
         app.use('./husky_extensions/uri-template');
         app.use('./husky_extensions/ckeditor-extension');
-		app.use('./husky_extensions/typeahead');
+        app.use('./husky_extensions/typeahead');
         app.use('./husky_extensions/tagmanager');
 
     }
@@ -37063,7 +37063,6 @@ define('__component__$toggler@husky',[], function() {
 
         };
 
-
     });
 })();
 
@@ -37999,35 +37998,35 @@ define('husky_extensions/template',['underscore', 'jquery'], function(_, $) {
 
 (function() {
 
-	
+    
 
-	if (window.Typeahead) {
-		define('typeahead', [], function() {
-			return window.Typeahead;
-		});
-	} else {
-		require.config({
-			paths: { "typeahead": 'bower_components/typeahead.js/typeahead' },
-			shim: { backbone: { deps: ['jquery'] } }
-		});
-	}
+    if (window.Typeahead) {
+        define('typeahead', [], function() {
+            return window.Typeahead;
+        });
+    } else {
+        require.config({
+            paths: { "typeahead": 'bower_components/typeahead.js/typeahead' },
+            shim: { backbone: { deps: ['jquery'] } }
+        });
+    }
 
-	define('husky_extensions/typeahead',['typeahead'], {
-		name: 'typeahead',
+    define('husky_extensions/typeahead',['typeahead'], {
+        name: 'typeahead',
 
-		initialize: function(app) {
-			app.sandbox.autocomplete = {
+        initialize: function(app) {
+            app.sandbox.autocomplete = {
 
-				init: function(selector, configs) {
-					return app.core.dom.$(selector).typeahead(configs);
-				},
+                init: function(selector, configs) {
+                    return app.core.dom.$(selector).typeahead(configs);
+                },
 
                 setValue: function(selector, value) {
                     return app.core.dom.$(selector).typeahead('setQuery', value);
                 }
-			};
-		}
-	});
+            };
+        }
+    });
 })();
 
 (function() {
@@ -38173,9 +38172,9 @@ define('husky_extensions/util',[],function() {
                     delimiter = '...';
                 }
 
-                substrLength = Math.floor((maxLength - delimiter.length)/2);
+                substrLength = Math.floor((maxLength - delimiter.length) / 2);
                 return text.slice(0, substrLength) + delimiter + text.slice(-substrLength);
-            },
+            };
 
             app.core.util.contains = function(list, value) {
                 return _.contains(list, value);
@@ -38185,7 +38184,7 @@ define('husky_extensions/util',[],function() {
                 return _.uniqueId(prefix);
             };
 
-			app.core.util.template = _.template;
+            app.core.util.template = _.template;
         }
     };
 });

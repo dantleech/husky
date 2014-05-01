@@ -108,9 +108,9 @@ define(function() {
                     delimiter = '...';
                 }
 
-                substrLength = Math.floor((maxLength - delimiter.length)/2);
+                substrLength = Math.floor((maxLength - delimiter.length) / 2);
                 return text.slice(0, substrLength) + delimiter + text.slice(-substrLength);
-            },
+            };
 
             app.core.util.contains = function(list, value) {
                 return _.contains(list, value);
@@ -120,7 +120,7 @@ define(function() {
                 return _.uniqueId(prefix);
             };
 
-			app.core.util.template = _.template;
+            app.core.util.template = _.template;
         }
     };
 });
