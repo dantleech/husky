@@ -1,0 +1,81 @@
+.flex-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+
+    .flex-item-content {
+        padding-left: $grid-padding-left;
+        padding-right: $grid-padding-right;
+        margin-bottom: $grid-margin-bottom;
+    }
+
+    &.small {
+        .flex-item-content {
+            margin-bottom: $grid-margin-bottom-small;
+        }
+    }
+
+    .flex-col-1 {
+        width: 8.33%;
+        min-width: 50px;
+    }
+
+    .flex-col-2 {
+        width: 16.66%;
+        min-width: 100px;
+    }
+
+    .flex-col-3 {
+        width: 25%;
+        min-width: 150px;
+    }
+
+    .flex-col-4 {
+        width: 33.33%;
+        min-width: 200px;
+    }
+
+    .flex-col-5 {
+        width: 41.66%;
+        min-width: 250px;
+    }
+
+    .flex-col-6 {
+        width: 50%;
+        min-width: 300px;
+    }
+
+    .flex-col-7 {
+        width: 58.33%;
+        min-width: 350px;
+    }
+
+    .flex-col-8 {
+        width: 66.66%;
+        min-width: 400px;
+    }
+
+    .flex-col-9 {
+        width: 75%;
+        min-width: 450px;
+    }
+
+    .flex-col-10 {
+        width: 83.33%;
+        min-width: 500px;
+    }
+
+    .flex-col-11 {
+        width: 91.66%;
+        min-width: 550px;
+    }
+
+    .flex-col-12 {
+        width: 100%;
+        min-width: 600px;
+    }
+}
